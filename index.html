@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+      background-repeat: no-repeat;
+      min-height: 100vh;
+
+    }
+    .container {
+      display: flex;
+      background-color: white;
+      max-width: 800px;
+      min-height: 400px;
+      margin: 0 auto;
+      margin-top: 100px;
+      border-radius: 17px;
+
+    }
+
+    .img-section {
+      width: 100%;
+    }
+    .img-section img{
+      width: 100%;
+    }
+    .text-section {
+      width: 100%;
+    }
+    h1 {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 25px;
+    }
+    .question {
+      background-color: green;
+      width: 80%;
+      height: 12%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+
+
+    }
+    .question img {
+      width: 3%;
+      height:15%;
+    }
+
+    @media only screen and (max-width:900px){
+      .container {
+        width: 90%;
+        flex-direction: column;
+        margin-top: 200px;
+      }
+      .img-section {
+        display: none;
+      }
+      .img-section-mobile {
+        position: relative;
+        padding: 30px;
+      }
+      .img-section-mobile img {
+        position:relative;
+        top: -150px;
+      }
+      .text-section {
+        position: relative;
+        top: -150px;
+
+      }
+      .question {
+        width: 95%;
+      }
+      h1 {
+        margin-top: 0;
+        text-align: center;
+      }
+    }
+ 
+  </style>
+
+</head>
+<body>
+
+  
+  <div class="container">
+    <div hidden class="box"><img src="/images/illustration-box-desktop.svg" alt=""></div>
+    <div class="img-section">
+      <img src="/images/illustration-woman-online-desktop.svg" alt="">      
+    </div>
+    <div class="img-section-mobile">
+      <img src="/images/illustration-woman-online-mobile.svg" alt="">
+    </div>
+    
+    <div class="text-section">
+
+      <h1>FAQ</h1>
+
+      <div class="question" >
+        <p>How many team members can I invite?</p>
+        <img src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <div class="question" >
+        <p>What is the maximum file upload size?</p>
+        <img src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <div class="question" >
+        <p>How do I reset my password?</p>
+        <img src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <div class="question" >
+        <p>Can I cancel my subscription?</p>
+        <img src="images/icon-arrow-down.svg" alt="">
+      </div>
+      <div class="question" >
+        <p>Do you provide additional support?</p>
+        <img src="images/icon-arrow-down.svg" alt="">
+      </div>
+
+    </div>
+
+
+  </main>
+
+<!-- 
+  You can invite up to 2 additional users on the Free plan. There is no limit on 
+  team members for the Premium plan.
+
+  No more than 2GB. All files in your account must fit your allotted storage space.
+
+  
+  Click “Forgot password” from the login page or “Change password” from your profile page.
+  A reset link will be emailed to you.
+
+  
+  Yes! Send us a message and we’ll process your request no questions asked.
+
+ 
+  Chat and email support is available 24/7. Phone lines are open during normal business hours. -->
+
+
+</body>
+</html>

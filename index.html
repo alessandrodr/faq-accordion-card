@@ -24,6 +24,7 @@
       position:relative;
       display: flex;
       background-color: white;
+      min-height: 430px;
       max-width: 800px;
       max-height: 450px;
       margin: 0 auto;
@@ -59,30 +60,58 @@
     }
     .question {
       margin: 0 auto;
-      padding-left: 15px;
-      padding-right: 15px;
-      width: 80%;
+      width: 100%;
       height: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 12px;
     }
+    .question a{
+      text-decoration: none;
+      color: hsl(237, 12%, 33%);
+    }
     .question img {
+      cursor: pointer; 
       width: 3%;
       height:15%;
     }
-    .box {
-      z-index: 10;
-      position: relative;
-      left: -500px;
-      top: -200px;
 
+    .box {
+      position: absolute;
+      left: -95px;
+      top:160px;
+      z-index: 10;
+    }
+    .answer {
+      display: none;
+      font-size: 11px;
+      padding-bottom: 20px;
+      color: hsl(237, 12%, 33%);
+    }
+
+    .active .answer {
+      display: block;
+    }
+
+    .active .question a{
+      color: black;
+      font-weight: bold;
+    }
+
+    .question-answer__accordion{
+      box-shadow: 0 2px 2px -2px gray;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .active .question img {
+      transform: rotate(180deg);
     }
 
     @media only screen and (max-width:900px){
       .container {
-        max-height: 900px;
+        max-height: 1050px;
         width: 90%;
         flex-direction: column;
         margin-top: 200px;
@@ -93,6 +122,10 @@
       .img-section-mobile {
         position: relative;
         padding: 40px;
+        background-image: url("images/bg-pattern-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: 250px;
+        background-position: 40px 0px;
       }
       .img-section-mobile img {
         position:relative;
@@ -112,19 +145,29 @@
       .question {
         font-size: 18px;
       }
+      .box {
+        display: none;
+      }
     }
 
-    @media only screen and (max-width:400px){
+    @media only screen and (max-width:600px){
     
       .question{
         font-size: 14px;
       }
 
       .container {
-        max-height: 600px;
+        max-height: 700px;
       }
     
     }
+
+    @media only screen and (max-width:400px){
+    .container {
+      max-height: 600px;
+    }
+  
+  }
   </style>
 
 
@@ -135,58 +178,62 @@
   <div class="container">
     
     <div class="img-section">
+      
       <img src="/images/illustration-woman-online-desktop.svg" alt="">      
     </div>
+    <img class="box" src="/images/illustration-box-desktop.svg" alt="">
     <div class="img-section-mobile">
       <img src="/images/illustration-woman-online-mobile.svg" alt="">
+      
     </div>
     
     <div class="text-section">
 
       <h1>FAQ</h1>
 
-      <div class="question" >
-        <p>How many team members can I invite?</p>
-        <img src="images/icon-arrow-down.svg" alt="">
+      <div class="question-answer__accordion">
+        <div class="question" >
+          <a href="#">How many team members can I invite?</a>
+            <img src="images/icon-arrow-down.svg" alt="">
+        </div>
+      <div hidden class="answer">You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan. </div>
       </div>
-      <div class="question" >
-        <p>What is the maximum file upload size?</p>
-        <img src="images/icon-arrow-down.svg" alt="">
+
+      <div class="question-answer__accordion">
+        <div class="question" >
+          <a href="#">What is the maximum file upload size?</a>
+          <img src="images/icon-arrow-down.svg" alt="" >
+        </div>
+      <div hidden class="answer">No more than 2GB. All files in your account must fit your allotted storage space. </div>
       </div>
-      <div class="question" >
-        <p>How do I reset my password?</p>
-        <img src="images/icon-arrow-down.svg" alt="">
+
+      <div class="question-answer__accordion">
+        <div class="question" >
+          <a href="#">How do I reset my password?</a>
+          <img src="images/icon-arrow-down.svg" alt="">
+        </div>
+      <div hidden class="answer">Click “Forgot password” from the login page or “Change password” from your profile page.
+        A reset link will be emailed to you.</div>
       </div>
-      <div class="question" >
-        <p>Can I cancel my subscription?</p>
-        <img src="images/icon-arrow-down.svg" alt="">
+
+      <div class="question-answer__accordion">
+        <div class="question" >
+          <a href="#">Can I cancel my subscription?</a>
+          <img src="images/icon-arrow-down.svg" alt="">
+        </div>
+      <div hidden class="answer">Yes! Send us a message and we’ll process your request no questions asked.</div>
       </div>
-      <div class="question" >
-        <p>Do you provide additional support?</p>
-        <img src="images/icon-arrow-down.svg" alt="">
+
+      <div class="question-answer__accordion">
+        <div class="question" >
+          <a href="#">Do you provide additional support?</a>
+          <img src="images/icon-arrow-down.svg" alt="">
+        </div>
+      <div hidden class="answer"> Chat and email support is available 24/7. Phone lines are open during normal business hours.</div>
       </div>
-      <img class="box" src="/images/illustration-box-desktop.svg" alt="">
+      
     </div>
-
-
+    <script type="text/javascript" src="script.js"></script>
   </main>
-
-<!-- 
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
-
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  
-  Yes! Send us a message and we’ll process your request no questions asked.
-
- 
-  Chat and email support is available 24/7. Phone lines are open during normal business hours. -->
-
-
 </body>
 </html>
